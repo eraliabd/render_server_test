@@ -1,2 +1,5 @@
 # render_server_test
 Django project deploy to Render server
+
+Creating postgresql database in render server
+![image](https://user-images.githubusercontent.com/91982815/224543478-a6c18abb-0a39-42e7-a163-004c713a7e60.png)
