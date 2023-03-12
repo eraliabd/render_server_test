@@ -3,7 +3,7 @@ from django.db import models
 
 class DollarCourse(models.Model):
     dollar_course = models.PositiveBigIntegerField()
-    soum = models.PositiveBigIntegerField()
+    som = models.PositiveBigIntegerField()
     dollar = models.PositiveBigIntegerField()
     created = models.DateTimeField(auto_now_add=True)
 
