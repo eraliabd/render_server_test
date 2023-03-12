@@ -7,4 +7,5 @@ Creating postgresql database in render server
 
 Templates
 
-![image](https://user-images.githubusercontent.com/91982815/224554355-c8b56138-7c1a-4fd3-9b6b-56d7e07113c6.png)
+![image](https://user-images.githubusercontent.com/91982815/224570494-5ce1e223-99ea-4444-b8f1-80f645168aca.png)
+
