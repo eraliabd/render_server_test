@@ -1,7 +1,6 @@
 from django.shortcuts import render
-
-import config.settings
 from .models import DollarCourse
+import config.settings
 import requests
 import datetime
 
