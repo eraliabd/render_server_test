@@ -9,5 +9,8 @@ class DollarCourse(models.Model):
     dollar = models.CharField(max_length=255)
     created = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ['id']
+
     def __str__(self):
         return self.dollar_course

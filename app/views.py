@@ -29,6 +29,8 @@ def main(request):
             dollar_to_som = float(dollar_input) * course
 
             model.dollar_course = course
+            model.dollar_input = dollar_input
+            model.som_input = som_input
             model.som = som_to_dollar
             model.dollar = dollar_to_som
             model.save()
@@ -46,6 +48,8 @@ def main(request):
             som_to_dollar = float(som_input) / course
 
             model.dollar_course = course
+            model.dollar_input = dollar_input
+            model.som_input = som_input
             model.som = som_to_dollar
             model.dollar = dollar_to_som
             model.save()
