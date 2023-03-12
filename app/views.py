@@ -23,16 +23,26 @@ def main(request):
         dollar_input = request.POST.get('dollar_to_som', 0)
         print(type(som_input), type(dollar_input))
 
-        som_to_dollar = float(som_input) / course
-        dollar_to_som = course * float(dollar_input)
+        if float(som_input) > 0:
+            som_to_dollar = float(som_input) / course
 
-        context = {
-            "course": course,
-            "som_to_dollar": f"{som_to_dollar:.3f}",
-            "dollar_to_som": f"{dollar_to_som:.3f}",
-            "date": current_date
-        }
-        return render(request, 'index.html', context)
+            context = {
+                "course": course,
+                "som_to_dollar": f"{som_to_dollar:.3f}",
+                # "dollar_to_som": f"{dollar_to_som:.3f}",
+                "date": current_date
+            }
+            return render(request, 'index.html', context)
+        elif float(dollar_input) > 0:
+            dollar_to_som = float(dollar_input) * course
+
+            context = {
+                "course": course,
+                # "som_to_dollar": f"{som_to_dollar:.3f}",
+                "dollar_to_som": f"{dollar_to_som:.3f}",
+                "date": current_date
+            }
+            return render(request, 'index.html', context)
     else:
         context = {
             "course": course,
