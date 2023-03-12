@@ -31,8 +31,8 @@ def main(request):
             model.dollar_course = course
             model.dollar_input = dollar_input
             model.som_input = som_input
-            model.som = som_to_dollar
-            model.dollar = dollar_to_som
+            model.som = dollar_to_som
+            model.dollar = som_to_dollar
             model.save()
 
             context = {
@@ -50,8 +50,8 @@ def main(request):
             model.dollar_course = course
             model.dollar_input = dollar_input
             model.som_input = som_input
-            model.som = som_to_dollar
-            model.dollar = dollar_to_som
+            model.som = dollar_to_som
+            model.dollar = som_to_dollar
             model.save()
 
             context = {
