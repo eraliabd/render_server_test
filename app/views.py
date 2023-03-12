@@ -16,15 +16,22 @@ def main(request):
     response = requests.get(url)
     # print(response.status_code)
     course = response.json()['conversion_rate']
-    print(f"Bugungi kurs: 1AQSH dollori = {course} so'm")
+    # print(f"$1 - {course} som")
 
     if request.method == 'POST':
         som_input = request.POST.get('som_to_dollar', 0)
         dollar_input = request.POST.get('dollar_to_som', 0)
-        print(type(som_input), type(dollar_input))
+        # print(type(som_input), type(dollar_input))
+        model = DollarCourse()
 
         if float(som_input) > 0:
             som_to_dollar = float(som_input) / course
+            dollar_to_som = float(dollar_input) * course
+
+            model.dollar_course = course
+            model.som = som_to_dollar
+            model.dollar = dollar_to_som
+            model.save()
 
             context = {
                 "course": course,
@@ -33,8 +40,15 @@ def main(request):
                 "date": current_date
             }
             return render(request, 'index.html', context)
+
         elif float(dollar_input) > 0:
             dollar_to_som = float(dollar_input) * course
+            som_to_dollar = float(som_input) / course
+
+            model.dollar_course = course
+            model.som = som_to_dollar
+            model.dollar = dollar_to_som
+            model.save()
 
             context = {
                 "course": course,
